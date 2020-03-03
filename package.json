@@ -55,6 +55,6 @@
     "edition": "octane"
   },
   "dependencies": {
-    "d3": "^5.15.0"
+    "d3": "^3.0.0"
   }
 }
