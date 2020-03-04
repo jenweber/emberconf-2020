@@ -4,7 +4,7 @@ import d3 from 'd3';
 
 export default class AnimateThisComponent extends Component {
   @action
-  showTheDots() {
+  showTheDots(el) {
     // From https://bl.ocks.org/mbostock/3231298
     // Released under the GNU General Public License, version 3
     var width = 960,
@@ -25,7 +25,7 @@ export default class AnimateThisComponent extends Component {
 
     force.start();
 
-    var svg = d3.select(".animate-this").append("svg")
+    var svg = d3.select(el).append("svg")
         .attr("width", width)
         .attr("height", height);
 
