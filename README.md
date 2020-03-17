@@ -4,6 +4,8 @@ This is the source code for the demo shown during the EmberConf 2020 Keynote.
 
 The force-directed bubbles code is by Mike Bostock, creator of D3. See https://bl.ocks.org/mbostock/3231298, released under the GNU General Public License, version 3.
 
+The hamsters version is in the `hamsters` branch. It's up to you to put the images in the `public` folder if you want to run it. Be sure to abide by the [Tomsters FAQ](https://emberjs.com/mascots/faq) before using any of the mascots.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
