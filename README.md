@@ -1,7 +1,8 @@
 # emberconf-2020
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is the source code for the demo shown during the EmberConf 2020 Keynote.
+
+The force-directed bubbles code is by Mike Bostock, creator of D3. See https://bl.ocks.org/mbostock/3231298, released under the GNU General Public License, version 3.
 
 ## Prerequisites
 
