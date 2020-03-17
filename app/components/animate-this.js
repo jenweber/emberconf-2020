@@ -26,26 +26,59 @@ export default class AnimateThisComponent extends Component {
     force.start();
 
     var svg = d3.select(el).append("svg")
-        .attr("width", width)
-        .attr("height", height);
+    .attr("width", width)
+    .attr("height", height);
 
-    svg.selectAll("circle")
-        .data(nodes.slice(1))
-      .enter().append("circle")
-        .attr("r", function(d) { return d.radius; })
-        .style("fill", function(d, i) { return color(i % 3); });
+const tomsters = [
+  "a11y-tomster.png",
+  "chicago-zoey.png",
+  "empress.png",
+  "munich.png",
+  "raleigh.png",
+  "slc.png",
+  "a11y-zoey.png", 
+  "berlin-tomster.png",
+  "columbus.png", 
+  "london.png",
+  "nizhny-novgorod.png",
+  "stockholm.png",
+  "atlanta-zoey.png",
+  "boston.png",
+  "dc-tomster.png",
+  "louisville.png", 
+  "nyc.png", 
+  "sandiego-zoey.png",
+  "austin-zoey.png",
+  "cancer-zoey.png",
+  "denver.png", 
+  "montevideo.png",
+  "paris.png",
+  "seattle.png",
+  "austin.png",
+  "chicago-tomster.png",
+  "emberconf-2016-tomster.png",
+  "munich-zoey.png",
+  "portland.png",
+  "serbia-tomster.png"
+]
 
-    force.on("tick", function(e) {
-      var q = d3.geom.quadtree(nodes),
-          i = 0,
-          n = nodes.length;
+svg.selectAll("zoey")
+    .data(nodes.slice(1))
+  .enter().append("image")
+    .attr("width", function(d) { return 2 * d.radius; })
+    .attr("href", function() { return tomsters[Math.floor(Math.random() * tomsters.length)]})
 
-      while (++i < n) q.visit(collide(nodes[i]));
+force.on("tick", function(e) {
+  var q = d3.geom.quadtree(nodes),
+      i = 0,
+      n = nodes.length;
 
-      svg.selectAll("circle")
-          .attr("cx", function(d) { return d.x; })
-          .attr("cy", function(d) { return d.y; });
-    });
+  while (++i < n) q.visit(collide(nodes[i]));
+
+  svg.selectAll("image")
+      .attr("x", function(d) { return d.x; })
+      .attr("y", function(d) { return d.y; });
+});
 
     svg.on("mousemove", function() {
       var p1 = d3.mouse(this);
